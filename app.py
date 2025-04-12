@@ -742,7 +742,7 @@ def get_download_link(text, filename="simplified_medical_note.txt"):
     return href
 
 # Function to save results to session_state history
-        def save_to_history(original_note, simplified_note, method, target_group, metrics):
+def save_to_history(original_note, simplified_note, method, target_group, metrics):
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
     
     history_item = {
