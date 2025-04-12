@@ -1584,10 +1584,15 @@ if st.session_state.current_tab == "tutorial":
             - Simplified for patients: Below 5%
             """)
     
-    with tutorial_tabs[5]:
+        with tutorial_tabs[5]:
         st.header("Step-by-Step Implementation Guide")
         
-        st.markdown("""
+        st.markdown("""# Check the multi-line string in `st.markdown()`
+st.markdown("""
+<div class="highlight">
+This interactive demo allows you to test different LLM prompting methods for simplifying medical notes. Select a sample note or enter your own, choose a simplification method, and see the results.
+</div>
+""", unsafe_allow_html=True)  # Ensure the closing triple quotes are present here
         Follow these steps to implement medical note simplification with LLMs in your own projects:
         
         ### 1. Setting Up Your Environment
