@@ -1563,7 +1563,7 @@ if st.session_state.current_tab == "tutorial":
             
             for bar in bars2:
                 height = bar.get_
-  for bar in bars2:
+            for bar in bars2:
                 height = bar.get_height()
                 ax2.annotate(f'{height}%',
                             xy=(bar.get_x() + bar.get_width() / 2, height),
