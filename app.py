@@ -2412,7 +2412,7 @@ elif st.session_state.current_tab == "about":
     
     ## Data
     
-    This tutorial uses Synthea™ - an open-source synthetic patient generator that creates realistic but not real patient data. This allows for demonstration with medical-like data without privacy concerns.
+    This tutorial uses Synthea - an open-source synthetic patient generator that creates realistic but not real patient data. This allows for demonstration with medical-like data without privacy concerns.
     
     ## Technologies
     
@@ -2440,7 +2440,7 @@ elif st.session_state.current_tab == "about":
     
     ## Acknowledgments
     
-    - Synthea™ for providing open-source synthetic patient data
+    - Synthea for providing open-source synthetic patient data
     - OpenAI for LLM API access
     - Streamlit for the interactive web application framework
     
