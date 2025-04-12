@@ -2447,7 +2447,7 @@ elif st.session_state.current_tab == "about":
     ## Disclaimer
     
     This tutorial is for educational purposes only. While the simplified notes aim to be accurate, any real medical application should involve healthcare professionals in the review process. The simplifications generated should complement, not replace, direct communication between healthcare providers and patients.
-    """)
+    )
     
     # Contact information
     st.markdown("---")
