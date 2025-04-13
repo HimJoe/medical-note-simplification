@@ -1696,7 +1696,7 @@ if st.session_state.current_tab == "tutorial":
     ### Try it yourself!
     
     Explore the **Live Demo** tab to see these steps in action and experiment with different methods and parameters.
-    """)
+    """,)
         
 elif st.session_state.current_tab == "demo":
     # LIVE DEMO TAB
