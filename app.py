@@ -1585,7 +1585,10 @@ if st.session_state.current_tab == "tutorial":
             """)
     with tutorial_tabs[5]:
         st.header("Step-by-Step Implementation Guide")
-        st.markdown("""
+       
+        st.markdown
+        
+        ("""
         Follow these steps to implement medical note simplification with LLMs in your own projects:
     
         ### 1. Setting Up Your Environment
@@ -1695,7 +1698,7 @@ if st.session_state.current_tab == "tutorial":
     ### Try it yourself!
     
     Explore the **Live Demo** tab to see these steps in action and experiment with different methods and parameters.
-    """,)
+    """,unsafe_allow_html=True)
         
 elif st.session_state.current_tab == "demo":
     # LIVE DEMO TAB
