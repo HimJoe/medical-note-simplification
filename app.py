@@ -1584,33 +1584,33 @@ if st.session_state.current_tab == "tutorial":
             - Simplified for patients: Below 5%
             """)
     with tutorial_tabs[5]:
-    st.header("Step-by-Step Implementation Guide")
+        st.header("Step-by-Step Implementation Guide")
     
-    st.markdown("""
-    Follow these steps to implement medical note simplification with LLMs in your own projects:
+        st.markdown("""
+        Follow these steps to implement medical note simplification with LLMs in your own projects:
     
-    ### 1. Setting Up Your Environment
+        ### 1. Setting Up Your Environment
     
-    ```python
-    # Install required packages
-    pip install openai pandas matplotlib scikit-learn nltk streamlit
+        ```python
+        # Install required packages
+        pip install openai pandas matplotlib scikit-learn nltk streamlit
     
-    # Import necessary libraries
-    import openai
-    import pandas as pd
-    import re
-    import time
+        # Import necessary libraries
+        import openai
+        import pandas as pd
+        import re
+        import time
     
-    # Set up OpenAI API
-    openai.api_key = "your-api-key-here"
-    ```
+        # Set up OpenAI API
+        openai.api_key = "your-api-key-here"
+        ```
     
-    ### 2. Preparing Your Data
+        ### 2. Preparing Your Data
     
-    ```python
-    # Load your medical notes
-    # For Synthea data, you might process CSVs to create notes
-    def create_medical_note(patient_data, conditions, medications, observations):
+        ```python
+        # Load your medical notes
+        # For Synthea data, you might process CSVs to create notes
+        def create_medical_note(patient_data, conditions, medications, observations):
         note = f"""
         PATIENT MEDICAL NOTE
         Patient ID: {patient_data['Id']}
