@@ -1583,7 +1583,7 @@ if st.session_state.current_tab == "tutorial":
             - Simplified for professionals: 5-10%
             - Simplified for patients: Below 5%
             """)
-        with tutorial_tabs[5]:
+    with tutorial_tabs[5]:
     st.header("Step-by-Step Implementation Guide")
     
     st.markdown("""
