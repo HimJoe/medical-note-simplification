@@ -1586,119 +1586,119 @@ if st.session_state.current_tab == "tutorial":
     with tutorial_tabs[5]:
         st.header("Step-by-Step Implementation Guide")
        
-        st.markdown
+        st.markdown(
+            """
+            Follow these steps to implement medical note simplification with LLMs in your own projects:
+    
+            ### 1. Setting Up Your Environment
+    
+            ```python
+            # Install required packages
+            pip install openai pandas matplotlib scikit-learn nltk streamlit
+    
+            # Import necessary libraries
+            import openai
+            import pandas as pd
+            import re
+            import time
+    
+            # Set up OpenAI API
+            openai.api_key = "your-api-key-here"
+            ```
+    
+            ### 2. Preparing Your Data
+    
+            ```python
+            # Load your medical notes
+            # For Synthea data, you might process CSVs to create notes
+            def create_medical_note(patient_data, conditions, medications, observations):
+            note = f"""
+            PATIENT MEDICAL NOTE
+            Patient ID: {patient_data['Id']}
+            Demographics: {patient_data['age']} year old {patient_data['GENDER']}, {patient_data['RACE']}, {patient_data['ETHNICITY']}
         
-        ("""
-        Follow these steps to implement medical note simplification with LLMs in your own projects:
-    
-        ### 1. Setting Up Your Environment
-    
-        ```python
-        # Install required packages
-        pip install openai pandas matplotlib scikit-learn nltk streamlit
-    
-        # Import necessary libraries
-        import openai
-        import pandas as pd
-        import re
-        import time
-    
-        # Set up OpenAI API
-        openai.api_key = "your-api-key-here"
-        ```
-    
-        ### 2. Preparing Your Data
-    
-        ```python
-        # Load your medical notes
-        # For Synthea data, you might process CSVs to create notes
-        def create_medical_note(patient_data, conditions, medications, observations):
-        note = f"""
-        PATIENT MEDICAL NOTE
-        Patient ID: {patient_data['Id']}
-        Demographics: {patient_data['age']} year old {patient_data['GENDER']}, {patient_data['RACE']}, {patient_data['ETHNICITY']}
+            MEDICAL HISTORY:
+            Conditions: {', '.join(conditions['DESCRIPTION'].tolist())}
         
-        MEDICAL HISTORY:
-        Conditions: {', '.join(conditions['DESCRIPTION'].tolist())}
+            MEDICATIONS:
+            {', '.join(medications['DESCRIPTION'].tolist())}
         
-        MEDICATIONS:
-        {', '.join(medications['DESCRIPTION'].tolist())}
+            LABORATORY RESULTS:
+            """
         
-        LABORATORY RESULTS:
-        """
-        
-        for _, obs in observations.iterrows():
+            for _, obs in observations.iterrows():
             note += f"- {obs['DATE']}: {obs['DESCRIPTION']} - {obs['VALUE']} {obs['UNITS']}\\n"
             
-        return note
-    ```
+            return note
+            ```
     
-    ### 3. Implementing Simplification Functions
+            ### 3. Implementing Simplification Functions
     
-    Choose the appropriate method for your needs:
+            Choose the appropriate method for your needs:
     
-    ```python
-    # Example: Chain of Thought method
-    def chain_of_thought_simplification(medical_note, target_group="General"):
-        # See the Code Examples tab for the full implementation
-        # ...
-    ```
+            ```python
+            # Example: Chain of Thought method
+            def chain_of_thought_simplification(medical_note, target_group="General"):
+            # See the Code Examples tab for the full implementation
+            # ...
+            ```
     
-    ### 4. Evaluating Results
+            ### 4. Evaluating Results
     
-    ```python
-    # Calculate readability score
-    def calculate_readability(text):
-        # Flesch Reading Ease implementation
-        # ...
+            ```python
+            # Calculate readability score
+            def calculate_readability(text):
+            # Flesch Reading Ease implementation
+            # ...
         
-    # Calculate medical term density
-    def calculate_medical_term_density(text):
-        # Term density implementation
-        # ...
+            # Calculate medical term density
+            def calculate_medical_term_density(text):
+            # Term density implementation
+            # ...
         
-    # Evaluate simplification
-    def evaluate_simplification(original, simplified):
-        metrics = {
+            # Evaluate simplification
+            def evaluate_simplification(original, simplified):
+            metrics = {
             "readability_score": calculate_readability(simplified),
             "original_readability": calculate_readability(original),
             "term_density": calculate_medical_term_density(simplified),
             "original_term_density": calculate_medical_term_density(original),
             "length_ratio": len(simplified.split()) / len(original.split())
-        }
+            }
         
-        return metrics
-    ```
+            return metrics
+            ```
     
-    ### 5. Building a User Interface
+            ### 5. Building a User Interface
     
-    ```python
-    # Example Streamlit app (simplified)
-    import streamlit as st
+            ```python
+            # Example Streamlit app (simplified)
+            import streamlit as st
     
-    st.title("Medical Note Simplification")
+            st.title("Medical Note Simplification")
     
-    medical_note = st.text_area("Enter medical note:")
-    method = st.selectbox("Select method", 
+            medical_note = st.text_area("Enter medical note:")
+            method = st.selectbox("Select method", 
                          ["Zero-Shot", "Few-Shot", "Chain of Thought", "Tree of Thoughts"])
     
-    if st.button("Simplify") and medical_note:
-        # Call appropriate function based on method
-        # ...
+            if st.button("Simplify") and medical_note:
+            # Call appropriate function based on method
+            # ...
         
-        # Display results
-        st.subheader("Simplified Note")
-        st.write(simplified_note)
+            # Display results
+            st.subheader("Simplified Note")
+            st.write(simplified_note)
         
-        # Show metrics
-        metrics = evaluate_simplification(medical_note, simplified_note)
-        st.metric("Readability Score", f"{metrics['readability_score']:.1f}/100")
-    ```
+            # Show metrics
+            metrics = evaluate_simplification(medical_note, simplified_note)
+            st.metric("Readability Score", f"{metrics['readability_score']:.1f}/100")
+            ```
     
-    ### Try it yourself!
+            ### Try it yourself!
     
-    Explore the **Live Demo** tab to see these steps in action and experiment with different methods and parameters.
-    """,unsafe_allow_html=True)
+            Explore the **Live Demo** tab to see these steps in action and experiment with different methods and parameters.
+            """
+        )
         
 elif st.session_state.current_tab == "demo":
     # LIVE DEMO TAB
